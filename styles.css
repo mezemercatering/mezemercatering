@@ -65,6 +65,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translateY(2rem);
     transition: all 1s ease-out;
+    will-change: opacity, transform;
 }
 
 .reveal-active {
@@ -103,6 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 .img-scale {
     transform: scale(1);
     transition: transform 2000ms ease-in-out;
+    will-change: transform;
 }
 
 .img-scale-active {
@@ -112,6 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Hero Initial Animation */
 .hero-scale {
     animation: heroScaleIn 2s ease-out forwards;
+    will-change: transform;
 }
 
 @keyframes heroScaleIn {
@@ -213,7 +216,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Swiper Container */
 .featuresSwiper {
-    padding-bottom: 60px;    height: 450px;}
+    padding-bottom: 60px;
+    height: 450px;
+}
 
 /* Navigation Arrows */
 .swiper-button-next,
@@ -252,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
     background: var(--color-gold);
-    transform: scale(1.1);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .swiper-button-next::after,
@@ -435,6 +440,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav a.nav-active {
+    color: var(--color-navy);
+    font-weight: 600;
 }
 
 /* ========================================
@@ -648,7 +658,7 @@ textarea:focus {
     position: fixed;
     inset: 0;
     /* Layer a soft cream wash over a full-screen background image so it's light, not dark */
-    background-image: linear-gradient(rgba(249,244,225,0.27), rgba(249,244,225,0.92)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80');
+    background-image: linear-gradient(rgba(249,244,225,0.27), rgba(249,244,225,0.92)), url('images/MED06017.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -682,7 +692,7 @@ textarea:focus {
     text-decoration: none;
     padding: 14px 36px;
     border: 2px solid var(--color-gold);
-    background: var(--color-cream);
+    background: transparent;
     transition: transform 180ms ease, background 180ms ease, color 180ms ease;
     border-radius: 0;
 }
