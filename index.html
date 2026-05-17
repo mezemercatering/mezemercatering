@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mezemer Catering | Evente Dasmash</title>
-    <link rel="icon" href="logomzc1337.png" type="image/jpeg">
+    <link rel="icon" href="images/logomzc1337.png" type="image/png">
    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2VSXVM9EQN"></script>
 <script>
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="images/MED06091.jpg">
     <script>
         tailwind.config = {
             theme: {
@@ -55,7 +56,7 @@
                 <!-- Center Logo -->
                 <div class="flex-shrink-0">
                     <a href="#" class="font-serif text-2xl md:text-3xl font-semibold text-gold tracking-wide inline-flex items-center gap-2">
-                        MeZemer <span class="text-gold">♥</span>
+                        MeZemer <i class="far fa-heart text-gold" style="font-size: 0.7em; vertical-align: middle;"></i>
                     </a>
                 </div>
 
@@ -92,9 +93,11 @@
         <!-- Background Image with Scale Animation -->
         <div class="absolute inset-0 hero-scale">
             <img 
-                src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                src="images/MED06091.jpg" 
                 alt="Wedding Table Setting" 
                 class="w-full h-full object-cover"
+                fetchpriority="high"
+                decoding="async"
             >
         </div>
         
@@ -104,8 +107,8 @@
         <!-- Content -->
         <div class="relative z-10 h-full flex flex-col items-center justify-center px-6">
             <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-tight text-center font-medium reveal">
-                <span class="block text-cream">MeZemer</span>
-                <span class="block text-gold">Catering</span>
+                <span class="block text-gold">MeZemer</span>
+                <span class="block text-cream">Catering</span>
             </h1>
             <p class="mt-6 w-full text-cream/90 text-lg md:text-xl tracking-wide reveal delay-200 text-center">
                 Përvoja kulinarike të zgjedhura për festën tuaj
@@ -128,9 +131,11 @@
     <!-- Full-Width Image Section -->
     <section class="w-full h-48 md:h-80 lg:h-96 overflow-hidden">
         <img 
-            src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+            src="images/MED05980.jpg" 
             alt="Wedding Celebration" 
             class="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
         >
     </section>
 
@@ -161,7 +166,7 @@
                     </div>
                     <h3 class="font-serif text-xs md:text-xl text-navy mb-2 md:mb-4 uppercase tracking-wider">Dizajni & Degustimi</h3>
                     <p class="text-[10px] md:text-sm text-navy/70 leading-relaxed">
-                        Dizajni i personalizuar i menusë dhe seancat e degustimit për të 
+                        Dizajni i personalizuar i menusë dhe seancat e degustimit për të siguruar perfeksionin.
                     </p>
                 </div>
 
@@ -172,7 +177,7 @@
                     </div>
                     <h3 class="font-serif text-xs md:text-xl text-navy mb-2 md:mb-4 uppercase tracking-wider">Festoni me Lehtësi</h3>
                     <p class="text-[10px] md:text-sm text-navy/70 leading-relaxed">
-                        Ne e marrim përsipër gjithçka që ju të mund të përqendroheni në 
+                        Ne e marrim përsipër gjithçka që ju të mund të përqendroheni në gëzimin e ditës tuaj.
                     </p>
                 </div>
             </div>
@@ -185,9 +190,11 @@
         <div class="grid md:grid-cols-2 gap-0">
             <div class="relative h-64 md:h-96 overflow-hidden reveal">
                 <img 
-                    src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    src="images/MED05952.jpg" 
                     alt="Elegant Plating" 
                     class="w-full h-full object-cover img-scale"
+                    loading="lazy"
+                    decoding="async"
                 >
             </div>
             <div class="flex items-center px-8 md:px-16 py-12 md:py-0 reveal delay-200 bg-gold">
@@ -216,9 +223,11 @@
             </div>
             <div class="relative h-64 md:h-96 overflow-hidden order-1 md:order-2 reveal delay-200">
                 <img 
-                    src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    src="images/MED06058.jpg" 
                     alt="White Glove Service" 
                     class="w-full h-full object-cover img-scale"
+                    loading="lazy"
+                    decoding="async"
                 >
             </div>
         </div>
@@ -227,9 +236,11 @@
         <div class="grid md:grid-cols-2 gap-0">
             <div class="relative h-64 md:h-96 overflow-hidden reveal">
                 <img 
-                    src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                    src="images/MED06084.jpg" 
                     alt="Outdoor Wedding" 
                     class="w-full h-full object-cover img-scale"
+                    loading="lazy"
+                    decoding="async"
                 >
             </div>
             <div class="flex items-center px-8 md:px-16 py-12 md:py-0 reveal delay-200 bg-gold">
@@ -250,12 +261,12 @@
         <div class="max-w-6xl mx-auto">
             <!-- Section Header - Desktop Only -->
             <div class="text-center mb-12 hidden md:block">
-                <span class="text-gold text-sm tracking-widest uppercase">Allo Beni</span>
+                <span class="text-gold text-sm tracking-widest uppercase">Galeria Jonë</span>
                 <h2 class="font-serif text-4xl md:text-5xl lg:text-[48px] text-navy font-semibold tracking-tight mt-4" style="font-family: 'Cormorant Garamond', serif; line-height: 120%; letter-spacing: -0.96px;">
-                    Image gallery
+                    Galeria e Imazheve
                 </h2>
                 <p class="text-[#667085] text-lg mt-4 mx-auto max-w-2xl" style="font-family: 'Cormorant Garamond', serif; line-height: 150%;">
-                    Lorem Ipsum is simply dummy text of the printing industrydummy text of the printing industrydummy text of the printing industry.
+                    Një pasqyrë e momenteve të paharrueshme që kemi krijuar për çiftet dhe familjet e tyre të dashura.
                 </p>
             </div>
             
@@ -263,26 +274,30 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8" style="gap: 32px;">
                 <div class="overflow-hidden">
                     <img 
-                        src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=656&q=80" 
+                        src="images/MED05994.jpg" 
                         alt="Gallery Image 1" 
                         class="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-500 rounded-none"
+                        loading="lazy"
+                        decoding="async"
                     >
                 </div>
                 <!-- Mobile Only Text Between Images -->
                 <div class="md:hidden text-center py-4">
-                    <span class="text-gold text-sm tracking-widest uppercase">Allo Beni</span>
+                    <span class="text-gold text-sm tracking-widest uppercase">Galeria Jonë</span>
                     <h2 class="font-serif text-3xl text-navy font-semibold tracking-tight mt-4" style="font-family: 'Cormorant Garamond', serif; line-height: 120%; letter-spacing: -0.72px;">
-                        Image gallery
+                        Galeria e Imazheve
                     </h2>
                     <p class="text-[#667085] text-base mt-2" style="font-family: 'Cormorant Garamond', serif; line-height: 150%;">
-                        Lorem Ipsum is simply dummy text of the printing industrydummy text of the printing industrydummy text of the printing industry.
+                        Një pasqyrë e momenteve të paharrueshme që kemi krijuar për çiftet dhe familjet e tyre të dashura.
                     </p>
                 </div>
                 <div class="overflow-hidden">
                     <img 
-                        src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=656&q=80" 
+                        src="images/MED06000.jpg" 
                         alt="Gallery Image 2" 
                         class="w-full h-64 md:h-80 object-cover hover:scale-105 transition-transform duration-500 rounded-none"
+                        loading="lazy"
+                        decoding="async"
                     >
                 </div>
             </div>
@@ -321,9 +336,11 @@
         <!-- Background Image -->
         <div class="absolute inset-0">
             <img 
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                src="images/MED06113.jpg" 
                 alt="Elegant Catering Setup" 
                 class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
             >
         </div>
         
@@ -341,7 +358,7 @@
                         </div>
                         <h3 class="font-serif text-xl md:text-2xl text-cream mb-4">Pije</h3>
                         <p class="text-cream/80 text-sm leading-relaxed mx-auto">
-                            Pije alkoolike dhe jo-alkoolike të shërbyera me
+                            Pije alkoolike dhe jo-alkoolike të shërbyera me stil dhe elegancë.
                         </p>
                     </div>
 
@@ -363,7 +380,7 @@
                         </div>
                         <h3 class="font-serif text-xl md:text-2xl text-cream mb-4">Restorant</h3>
                         <p class="text-cream/80 text-sm leading-relaxed mx-auto">
-                            Përvojë komplete gastronomi me shërbim të
+                            Përvojë komplete gastronomi me shërbim të nivelit botëror.
                         </p>
                     </div>
                 </div>
@@ -430,7 +447,7 @@
                                     </a>
                                 </div>
                                 <div class="h-48 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fresh ingredients" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                                    <img src="images/MED05981.jpg" alt="Fresh ingredients" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
@@ -445,7 +462,7 @@
                                     </a>
                                 </div>
                                 <div class="h-48 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional chef" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                                    <img src="images/MED06018.jpg" alt="Professional chef" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
@@ -460,7 +477,7 @@
                                     </a>
                                 </div>
                                 <div class="h-48 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elegant presentation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                                    <img src="images/MED06052.jpg" alt="Elegant presentation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
@@ -475,7 +492,7 @@
                                     </a>
                                 </div>
                                 <div class="h-48 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Authentic flavors" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                                    <img src="images/MED05994.jpg" alt="Authentic flavors" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async">
                                 </div>
                             </div>
                         </div>
@@ -491,17 +508,17 @@
         <div class="max-w-6xl mx-auto">
             <!-- Tagline -->
             <div class="text-center mb-4">
-                <span class="text-gold text-sm tracking-widest uppercase">Tagline</span>
+                <span class="text-gold text-sm tracking-widest uppercase">Rrugëtimi Ynë</span>
             </div>
             
             <!-- Heading -->
             <h2 class="font-serif text-4xl md:text-5xl lg:text-[48px] text-navy font-semibold text-center mt-4 mb-8" style="line-height: 120%; letter-spacing: -0.96px;">
-                Our timeline
+                Historia e Mezemerit
             </h2>
             
             <!-- Description -->
             <p class="text-[#667085] text-lg text-center mx-auto mb-16 max-w-2xl" style="line-height: 150%;">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Nga fillimi i vogël deri te suksesi i sotëm — çdo hap i rrugës sonë ka qenë i mbushur me pasion dhe dedikam.
             </p>
             
             <!-- Timeline Items -->
@@ -513,17 +530,17 @@
                     
                     <!-- Timeline Content - Desktop -->
                     <div class="hidden md:flex flex-col items-center">
-                        <span class="text-navy text-sm font-semibold mb-2">September 25th, 2050</span>
+                        <span class="text-navy text-sm font-semibold mb-2">2020 — Themelimi</span>
                         <div class="w-full max-w-2xl border-t border-[#8b0000] mb-2"></div>
-                        <h5 class="text-navy text-2xl font-semibold mb-2" style="letter-spacing: -0.48px;">Short title goes here</h5>
-                        <p class="text-[#667085] text-lg text-center mb-4 max-w-[80%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <h5 class="text-navy text-2xl font-semibold mb-2" style="letter-spacing: -0.48px;">Fillimi i Mezemerit</h5>
+                        <p class="text-[#667085] text-lg text-center mb-4 max-w-[80%]">Mezemer Catering u themelua me një vizion të qartë: të ofronte shërbim catering të nivelit të lartë për dasmat dhe eventet e veçanta në Kosovë.</p>
                     </div>
                     
                     <!-- Timeline Content - Mobile -->
                     <div class="md:hidden border-l-2 border-[#8b0000] pl-4 max-w-[85%] mr-auto reveal timeline-swipe-left">
-                        <span class="text-navy text-sm font-semibold">September 25th, 2050</span>
-                        <h5 class="text-navy text-xl font-semibold mt-2" style="letter-spacing: -0.4px;">Short title goes here</h5>
-                        <p class="text-[#667085] text-base mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <span class="text-navy text-sm font-semibold">2020 — Themelimi</span>
+                        <h5 class="text-navy text-xl font-semibold mt-2" style="letter-spacing: -0.4px;">Fillimi i Mezemerit</h5>
+                        <p class="text-[#667085] text-base mt-2">Mezemer Catering u themelua me një vizion të qartë: të ofronte shërbim catering të nivelit të lartë për dasmat dhe eventet e veçanta në Kosovë.</p>
 
                     </div>
                 </div>
@@ -535,17 +552,17 @@
                     
                     <!-- Timeline Content - Desktop -->
                     <div class="hidden md:flex flex-col items-center">
-                        <span class="text-navy text-sm font-semibold mb-2">August 25th, 2050</span>
+                        <span class="text-navy text-sm font-semibold mb-2">2022 — Zgjerimi</span>
                         <div class="w-full max-w-2xl border-t border-[#8b0000] mb-2"></div>
-                        <h5 class="text-navy text-2xl font-semibold mb-2" style="letter-spacing: -0.48px;">Short title goes here</h5>
-                        <p class="text-[#667085] text-lg text-center mb-4 max-w-[80%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <h5 class="text-navy text-2xl font-semibold mb-2" style="letter-spacing: -0.48px;">100 Dasma të Shërbyera</h5>
+                        <p class="text-[#667085] text-lg text-center mb-4 max-w-[80%]">Pas dy viteve të punës së palodhur, arritëm një arritje të madhe — 100 dasma të shërbyera me sukses dhe me kënaqësi të plotë të klientëve.</p>
                     </div>
                     
                     <!-- Timeline Content - Mobile -->
                     <div class="md:hidden border-r-2 border-[#8b0000] pr-4 ml-auto max-w-[85%] text-right reveal timeline-swipe-right">
-                        <span class="text-navy text-sm font-semibold">August 25th, 2050</span>
-                        <h5 class="text-navy text-xl font-semibold mt-2" style="letter-spacing: -0.4px;">Short title goes here</h5>
-                        <p class="text-[#667085] text-base mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <span class="text-navy text-sm font-semibold">2022 — Zgjerimi</span>
+                        <h5 class="text-navy text-xl font-semibold mt-2" style="letter-spacing: -0.4px;">100 Dasma të Shërbyera</h5>
+                        <p class="text-[#667085] text-base mt-2">Pas dy viteve të punës së palodhur, arritëm një arritje të madhe — 100 dasma të shërbyera me sukses dhe me kënaqësi të plotë të klientëve.</p>
                     </div>
                 </div>
                 
@@ -556,17 +573,17 @@
                     
                     <!-- Timeline Content - Desktop -->
                     <div class="hidden md:flex flex-col items-center">
-                        <span class="text-navy text-sm font-semibold mb-2">July 25th, 2050</span>
+                        <span class="text-navy text-sm font-semibold mb-2">2025 — Sot</span>
                         <div class="w-full max-w-2xl border-t border-[#8b0000] mb-2"></div>
-                        <h5 class="text-navy text-2xl font-semibold mb-2" style="letter-spacing: -0.48px;">Short title goes here</h5>
-                        <p class="text-[#667085] text-lg text-center mb-4 max-w-[80%]">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <h5 class="text-navy text-2xl font-semibold mb-2" style="letter-spacing: -0.48px;">250+ Dasma & Vazhdojmë</h5>
+                        <p class="text-[#667085] text-lg text-center mb-4 max-w-[80%]">Sot, Mezemer Catering është emri më i besuar në catering dasmash në Gjakovë, me mbi 250 dasma të shërbyera dhe ekip të dedikuar ndaj çdo detaji.</p>
                     </div>
                     
                     <!-- Timeline Content - Mobile -->
                     <div class="md:hidden border-l-2 border-[#8b0000] pl-4 max-w-[85%] mr-auto reveal timeline-swipe-left">
-                        <span class="text-navy text-sm font-semibold">July 25th, 2050</span>
-                        <h5 class="text-navy text-xl font-semibold mt-2" style="letter-spacing: -0.4px;">Short title goes here</h5>
-                        <p class="text-[#667085] text-base mt-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <span class="text-navy text-sm font-semibold">2025 — Sot</span>
+                        <h5 class="text-navy text-xl font-semibold mt-2" style="letter-spacing: -0.4px;">250+ Dasma & Vazhdojmë</h5>
+                        <p class="text-[#667085] text-base mt-2">Sot, Mezemer Catering është emri më i besuar në catering dasmash në Gjakovë, me mbi 250 dasma të shërbyera dhe ekip të dedikuar ndaj çdo detaji.</p>
 
                     </div>
                 </div>
@@ -628,13 +645,14 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
                     </div>
-                    <h3 class="font-serif text-xl text-gold mb-2">Zyra</h3>
-                    <p class="text-gold/60 text-sm mb-4">Vizitoni studion tonë të catering-ut</p>
+                    <h3 class="font-serif text-xl text-gold mb-2">Lokacioni</h3>
+                    <p class="text-gold/60 text-sm mb-4">Stacioni i Autobusave Gjakovë</p>
                     <p class="text-gold font-medium">
-                        123 Wedding Lane, Minnesota
+                        Rruga Kolë Lleshi 14, Gjakovë, Kosovë
                     </p>
                 </div>
             </div>
+        </div>
     </section>
 
     <!-- Footer -->
