@@ -46,32 +46,63 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
-    
-    window.addEventListener('scroll', () => {
+    let scrollTicking = false;
+
+    const handleScroll = () => {
         const currentScroll = window.pageYOffset;
-        
-        // Add shadow and scrolled class when past 100px
+
+        // Navbar shadow + hide/show
         if (currentScroll > 100) {
-            navbar.classList.add('shadow-lg');
-            navbar.classList.add('scrolled');
+            navbar.classList.add('shadow-lg', 'scrolled');
         } else {
-            navbar.classList.remove('shadow-lg');
-            navbar.classList.remove('scrolled');
+            navbar.classList.remove('shadow-lg', 'scrolled');
         }
-        
-        // Hide on scroll down, show on scroll up
         if (currentScroll > lastScroll && currentScroll > 100) {
-            // Scrolling down - hide navbar
             navbar.classList.add('-translate-y-full');
             navbar.classList.remove('translate-y-0');
         } else {
-            // Scrolling up - show navbar
             navbar.classList.remove('-translate-y-full');
             navbar.classList.add('translate-y-0');
         }
-        
+
+        // Parallax
+        if (heroSection && currentScroll < heroSection.offsetHeight) {
+            heroSection.style.transform = `translateY(${currentScroll * 0.5}px) scale(1.1)`;
+        }
+
+        // Active nav section
+        let current = '';
+        sections.forEach(section => {
+            if (currentScroll >= section.offsetTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('nav-active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('nav-active');
+            }
+        });
+
+        // Scroll-to-top button visibility
+        if (currentScroll > 500) {
+            scrollToTopBtn.classList.remove('opacity-0');
+            scrollToTopBtn.classList.add('opacity-100');
+        } else {
+            scrollToTopBtn.classList.remove('opacity-100');
+            scrollToTopBtn.classList.add('opacity-0');
+        }
+
         lastScroll = currentScroll;
-    });
+        scrollTicking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(handleScroll);
+            scrollTicking = true;
+        }
+    }, { passive: true });
 
 
     // ========================================
@@ -97,22 +128,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // ========================================
-    // PARALLAX EFFECT FOR HERO
+    // PARALLAX EFFECT FOR HERO (handled in unified scroll handler)
     // ========================================
     
     const heroSection = document.querySelector('.hero-scale');
-    
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroHeight = heroSection.offsetHeight;
-            
-            if (scrolled < heroHeight) {
-                const parallaxSpeed = 0.5;
-                heroSection.style.transform = `translateY(${scrolled * parallaxSpeed}px) scale(1.1)`;
-            }
-        });
-    }
 
 
     // ========================================
@@ -184,31 +203,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // ========================================
-    // NAVBAR LINK ACTIVE STATE
+    // NAVBAR LINK ACTIVE STATE (handled in unified scroll handler)
     // ========================================
-    
+
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('text-gold');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('text-gold');
-            }
-        });
-    });
 
 
     // ========================================
@@ -236,15 +235,7 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollToTopBtn);
 
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 500) {
-            scrollToTopBtn.classList.remove('opacity-0');
-            scrollToTopBtn.classList.add('opacity-100');
-        } else {
-            scrollToTopBtn.classList.remove('opacity-100');
-            scrollToTopBtn.classList.add('opacity-0');
-        }
-    });
+    // Scroll-to-top visibility handled in unified scroll handler
 
     scrollToTopBtn.addEventListener('click', () => {
         window.scrollTo({
