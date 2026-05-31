@@ -320,6 +320,68 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ========================================
+    // MENU BUTTON TOGGLE FUNCTIONALITY
+    // ========================================
+    const menuButtons = document.querySelectorAll('.menu-btn');
+    const submenuButtons = document.querySelectorAll('.submenu-btn');
+    const menuContents = document.querySelectorAll('.menu-content');
+
+    menuButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const menuType = this.getAttribute('data-menu');
+            
+            // Hide all menu contents
+            menuContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active state from all buttons
+            menuButtons.forEach(btn => {
+                btn.classList.remove('bg-gold', 'text-cream');
+                btn.classList.add('text-navy');
+            });
+            
+            // Show selected menu content if it exists
+            const selectedMenu = document.getElementById(`menu-${menuType}`);
+            if (selectedMenu) {
+                selectedMenu.classList.remove('hidden');
+                // Add active state to clicked button
+                this.classList.remove('text-navy');
+                this.classList.add('bg-gold', 'text-cream');
+            }
+        });
+    });
+
+    // Submenu button functionality for Menu I/II selection
+    submenuButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const submenuType = this.getAttribute('data-submenu');
+            
+            // Hide all menu contents except the submenu selector
+            menuContents.forEach(content => {
+                if (content.id !== 'menu-15') {
+                    content.classList.add('hidden');
+                }
+            });
+            
+            // Remove active state from all submenu buttons
+            submenuButtons.forEach(btn => {
+                btn.classList.remove('bg-gold', 'text-cream');
+                btn.classList.add('text-navy');
+            });
+            
+            // Show selected submenu content
+            const selectedSubmenu = document.getElementById(`menu-${submenuType}`);
+            if (selectedSubmenu) {
+                selectedSubmenu.classList.remove('hidden');
+                // Add active state to clicked button
+                this.classList.remove('text-navy');
+                this.classList.add('bg-gold', 'text-cream');
+            }
+        });
+    });
+
 }); // End DOMContentLoaded
 
 
