@@ -21,13 +21,19 @@ html {
 }
 
 body {
-    min-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     background-color: var(--color-cream);
     color: var(--color-navy);
     font-family: 'Cormorant Garamond', serif;
     letter-spacing: 0.05em;
     line-height: 1.8;
+}
+
+img, video {
+    max-width: 100%;
+    display: block;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -123,6 +129,21 @@ h1, h2, h3, h4, h5, h6 {
     }
     to {
         transform: scale(1);
+    }
+}
+
+/* Stronger zoom on tablet/desktop */
+@media (min-width: 768px) {
+    .hero-scale {
+        animation: heroScaleInDesktop 2s ease-out forwards;
+    }
+    @keyframes heroScaleInDesktop {
+        from {
+            transform: scale(1.4) translateY(-10%);
+        }
+        to {
+            transform: scale(1.3) translateY(-10%);
+        }
     }
 }
 
@@ -296,14 +317,53 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Slide Styles */
 .featuresSwiper .swiper-slide {
-    height: auto;
+    height: auto !important;
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    min-height: 450px;
+}
+
+.featuresSwiper .swiper-wrapper {
+    align-items: stretch !important;
 }
 
 .featuresSwiper .swiper-slide > div {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make text section flex so image area stays consistent across cards */
+.featuresSwiper .swiper-slide > div > .p-8 {
+    flex: 1 1 auto;
+}
+
+/* Uniform image area across all "Pse ne" cards on every device */
+.featuresSwiper .swiper-slide > div > div:last-child {
+    height: 200px !important;
+    min-height: 200px !important;
+    max-height: 200px !important;
+    flex: 0 0 200px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+.featuresSwiper .swiper-slide > div > div:last-child img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+}
+
+@media (max-width: 767px) {
+    .featuresSwiper .swiper-slide > div > div:last-child {
+        height: 220px !important;
+        min-height: 220px !important;
+        max-height: 220px !important;
+        flex: 0 0 220px !important;
+    }
 }
 
 /* Responsive adjustments */
@@ -711,4 +771,159 @@ textarea:focus {
 /* Make overlay items large and easy to tap */
 @media (max-width: 420px) {
     .mobile-menu-item { font-size: 18px; padding: 14px 32px; }
+}
+
+/* ========================================
+   RESPONSIVE REFINEMENTS
+   ======================================== */
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+    .max-w-7xl, .max-w-6xl, .max-w-4xl, .max-w-3xl, .max-w-2xl {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* Small tablets / large phones (<= 767px) */
+@media (max-width: 767px) {
+    /* Tighter section padding on mobile */
+    section.py-24,
+    section.py-16 {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+
+    /* Header */
+    header nav {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Hero */
+    section h1.text-6xl {
+        font-size: 3rem !important;
+        line-height: 1.1 !important;
+    }
+
+    /* Service sections: text padding */
+    section#services .px-8 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        padding-top: 2.5rem !important;
+        padding-bottom: 2.5rem !important;
+    }
+
+    /* "Si Funksionon" / Menu 3-col grid: keep 3 cols but tighter */
+    section .grid.grid-cols-3 {
+        gap: 0.5rem;
+    }
+
+    /* Stats row wraps & spaces nicely */
+    section .flex-wrap.gap-4 {
+        gap: 1rem !important;
+    }
+
+    /* Gallery side padding */
+    section[style*="padding-left: 5%"] {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    /* Icon overlay (cocktail/serving/utensils) — keep on one row but tighter */
+    section.relative .flex.justify-between {
+        gap: 0.5rem !important;
+    }
+    section.relative .flex.justify-between > div {
+        min-width: 0 !important;
+        padding: 0 0.25rem;
+    }
+    section.relative .flex.justify-between i {
+        font-size: 32px !important;
+    }
+    section.relative .flex.justify-between h3 {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    section.relative .flex.justify-between p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Contact cards */
+    section#contact .grid {
+        gap: 1rem !important;
+    }
+    section#contact .p-8 {
+        padding: 1.5rem !important;
+    }
+
+    /* Footer stack centering */
+    footer .flex-col {
+        text-align: center !important;
+    }
+
+    /* Swiper buttons inside containers */
+    .swiper-button-prev { left: 4px !important; }
+    .swiper-button-next { right: 4px !important; }
+}
+
+/* Small phones (<= 480px) */
+@media (max-width: 480px) {
+    section h1.text-6xl {
+        font-size: 2.5rem !important;
+    }
+
+    /* Hero subtitle */
+    section .text-lg.md\:text-xl {
+        font-size: 0.95rem !important;
+    }
+
+    /* Section headings */
+    h2.text-4xl, h2.text-5xl {
+        font-size: 1.875rem !important;
+        line-height: 1.2 !important;
+    }
+
+    /* "Si Funksionon" step circles smaller */
+    section .w-12.h-12 {
+        width: 2.25rem !important;
+        height: 2.25rem !important;
+    }
+
+    /* Tighter card padding */
+    .p-8 { padding: 1.25rem !important; }
+
+    /* Stats text scale */
+    section h4.text-2xl { font-size: 1.5rem !important; }
+
+    /* Featured swiper height */
+    .featuresSwiper { height: auto; min-height: 420px; }
+}
+
+/* Extra small phones (<= 360px) */
+@media (max-width: 360px) {
+    section h1.text-6xl {
+        font-size: 2.125rem !important;
+    }
+    h2.text-4xl, h2.text-5xl {
+        font-size: 1.625rem !important;
+    }
+    section.relative .flex.justify-between h3 {
+        font-size: 0.85rem !important;
+    }
+    section.relative .flex.justify-between p {
+        font-size: 0.7rem !important;
+    }
+    section.relative .flex.justify-between i {
+        font-size: 26px !important;
+    }
+}
+
+/* Landscape phones */
+@media (max-width: 900px) and (orientation: landscape) and (max-height: 500px) {
+    section.h-\[70vh\] {
+        height: 100vh !important;
+        min-height: 420px;
+    }
 }
