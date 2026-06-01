@@ -667,7 +667,7 @@ textarea:focus {
 .mobile-hamburger-btn {
     appearance: none;
     -webkit-appearance: none;
-    border: 2px solid var(--color-cream);
+    border: 2px solid var(--color-gold);
     background: transparent;
     width: 44px;
     height: 36px;
