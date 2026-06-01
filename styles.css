@@ -667,7 +667,7 @@ textarea:focus {
 .mobile-hamburger-btn {
     appearance: none;
     -webkit-appearance: none;
-    border: none;
+    border: none !important;
     background: transparent;
     width: 44px;
     height: 36px;
@@ -676,14 +676,17 @@ textarea:focus {
     justify-content: center;
     position: relative;
     cursor: pointer;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .mobile-hamburger-btn:focus,
 .mobile-hamburger-btn:active,
-.mobile-hamburger-btn:focus-visible {
-    outline: none;
-    border: none;
-    box-shadow: none;
+.mobile-hamburger-btn:focus-visible,
+.mobile-hamburger-btn:hover {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .mh-dot {
